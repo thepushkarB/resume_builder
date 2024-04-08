@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/img/logo.jpeg">
+    <title>Resume Builder Neo</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- link bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <style>
+        @media print {
+            body {
+                width: 100%;
+                height: auto;
+            }
+
+            .page-break {
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--* FROM -->
+    <!-- header -->
+    <header class="bg-dark border-bottom border-bottom-dark " data-bs-theme="dark" id="nav">
+        <div class="text-center header p-4">
+            <h1>Resume Builder</h1>
+        </div>
+    </header>
+
+    <!-- body -->
+    <div class="container mt-5">
+        <!-- Resume Header Form -->
+        <div class="row text-center">
+            <div class="col-12 mb-2">
+                <h1><input id="nameField" type="text" placeholder="Your Name"></h1>
+                <p class="text-muted mb-0" id="jobRoleInput">
+                    <strong><input id="jobRole" type="text" placeholder="Your Job Title"></strong>
+                </p>
+                <p class="links">
+                    <input id="phoneNum" type="tel" placeholder="Phone Number"> •
+                    <input id="emailField" type="email" placeholder="Email Address"> •
+                    <input id="linkedinField" type="text" placeholder="LinkedIn Profile"> •
+                    <input id="locationField" type="text" placeholder="Location: e.g Pune, IN">
+                </p>
+            </div>
+        </div>
+
+        <!-- Summary Form -->
+        <div class="row text-center">
+            <div class="col-12">
+                <h2>Summary</h2>
+                <hr>
+                <!-- input box -->
+                <div class="form-group">
+                    <textarea class="form-control" id="summaryField" rows="5"
+                        placeholder="Enter your summary here..."></textarea>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <!-- Skills Form -->
+        <div class="row text-center">
+            <div class="col-12">
+                <h2>Skills</h2>
+                <hr>
+                <!-- input box -->
+                <div class="form-group">
+                    <!-- <label for="skills">Enter your skills here (separate each skill with a comma and a space):</label> -->
+                    <textarea class="form-control" id="skillsField" rows="5"
+                        placeholder="Enter your skills here (separate each skill with a comma and a space) &#10e.g:- Technology: Excel, VBA, SQL, QuickBooks, Power BI, Tableau, Python"></textarea>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <!-- Experience Form -->
+        <div class="row text-center">
+            <div class="col-12">
+                <h2>Experience</h2>
+                <hr>
+                <div class="exp-form form-group">
+                    <div class="experience-entry mb-3">
+                        <!-- col 1 -->
+                        <div class="col">
+                            <div class="col-6">
+                                <label for="company">Company Name:</label>
+                                <input type="text" class="form-control" id="companyName" placeholder="Enter company name">
+                            </div>
+                            <div class="col-6">
+                                <label for="job_role">Job Role:</label>
+                                <input type="text" class="form-control" id="job_role" placeholder="Enter job role">
+                            </div>
+                        </div>
+                        <!-- col 2 -->
+                        <!-- <div class="col d-flex flex-row-reverse"> -->
+                        <div class="col d-flex flex-column mb-3">
+                            <div class="col-6 ">
+                                <label for="location">Job Location:</label>
+                                <input type="text" class="form-control" id="jobLocation" placeholder="Enter job location">
+                            </div>
+                            <div class="col-6 ">
+                                <label for="work_dates">Work Dates:</label>
+                                <input type="text" class="form-control" id="work_dates"
+                                    placeholder="Enter work dates (e.g., MM/YYYY - MM/YYYY)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- work exp  -->
+                    <label for="work_experience">Work Experience:</label>
+                    <textarea class="form-control" id="work_experienceTextarea" rows="5"
+                        placeholder="Enter your work experience using bullet points">
+                    </textarea>
+                </div>
+                <!-- add-btn -->
+                <button class="btn mt-3" id="add-exp">Add+</button>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <!-- Education Form -->
+        <div class="row text-center">
+            <div class="col-12">
+                <h2>Education</h2>
+                <hr>
+                <div class="education-form">
+                    <div class="education-entry mb-3">
+                        <div class="card-body d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <input id="eduClgField" type="text" class="form-control mb-2" placeholder="College Name">
+                                <input id="eduDegreeField" type="text" class="form-control" placeholder="Degree">
+                            </div>
+                            <div class="text-end">
+                                <input id="eduUniField" type="text" class="form-control mb-2" placeholder="University Name">
+                                <input id="eduDurationField" type="text" class="form-control" placeholder="Duration (Years)">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn mt-3" id="add-education" type="submit">Add+</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <!-- Courses & Certificates Form -->
+        <div class="row text-center">
+            <div class="col-12">
+                <h2>Courses & Certificates</h2>
+                <hr>
+                <div class="courses-form">
+                    <div class="course-entry mb-3 d-flex flex-row grid gap-5">
+                        <!-- input field 1 -->
+                        <div class="form-group p-2 g-col-6 text-start">
+                            <label for="course">Course/Certification Name:</label>
+                            <input type="text" class="form-control" id="course" placeholder="e.g., High-Dimensional Data Analysis" size="50">
+                        </div>
+                        <!-- input field 2 -->
+                        <div class="form-group p-2 g-col-6">
+                            <label for="provider">Provider & Year:</label>
+                            <input type="text" class="form-control inputboxCourse" id="provider" placeholder="e.g., Harvard, 2017">
+                        </div>
+                    </div>
+                    <p>🙏 Please click on the 'Add+' button below to save you values. 🙏</p>
+                    <button class="btn mt-3" id="add-course">Add+</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+
+
+        <!-- Interests & Hobbies Form -->
+        <!-- <div class="row text-center">
+            <div class="col-12">
+                <h2>Interests & Hobbies</h2>
+                <hr>
+            </div>
+        </div> -->
+
+        <!-- Generate Btn -->
+        <div class="contaner text-center mt-3">
+            <button onclick="GenerateResume()" class="btn btn-lg" id="Generate"><strong>Generate</strong></button>
+        </div>
+    </div>
+
+    <!--! ========= * ========= * ========= * ========= * ========= * ========= * ========= * ========= -->
+
+    <!--* RESUME TEMPLATE -->
+    <!-- Bootstrap Container -->
+    <div class="container mt-5 template">
+        <!-- Resume Header -->
+        <div class="row text-center">
+            <div class="col-12 mb-2">
+                <h1 id="nameT">JONATHAN WRIGHT</h1>
+                <p class="text-muted mb-0" id="jobroleT">
+                    <strong>Lead Business Analyst</strong>
+                </p>
+                <!-- <p class="links">+1-921-389-0182 • name@gmail.com • linkedin.com/in/jonwrightjr • Dallas, TX</p> -->
+                <p class="links">
+                    <a id="phone_numT">+1-921-389-0182</a> •
+                    <a id="emailT" href="mailto:pushkarbankar@gmail.com">name@gmail.com</a> •
+                    <a id="linkedinT" href="https://linkedin.com/">linkedin.com/in/jonwrightjr</a> •
+                    <a id="locationT">Dallas, TX</a>
+                    <!-- Dallas, TX -->
+                </p>
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="row text-center">
+            <div class="col-12">
+                <h2>Summary</h2>
+                <hr>
+                <p id="summaryT" class="text-start">I am an experienced Business Analyst with a strong technical background and great
+                    project management skills. I am able to work on multiple projects at the same time, which over the
+                    years at Network Solutions have lead to eight-digit efficiencies for the business. Furthermore, I
+                    immensely enjoy the process of deriving critical business insights using analytics, and then
+                    supporting or directly managing the efficiency implementation projects. My ability to move from
+                    analysis or leading a team of analysts to supporting or leading the actual project is something that
+                    could help further accelerate the velocity of work at Ion Insights.</p>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <!-- Skills -->
+        <div class="row text-center">
+            <div class="col-12">
+                <h2>Skills</h2>
+                <hr>
+                <!-- <p class="text-start"><strong>Business:</strong> Budgeting · Financial Analysis · Project Management ·
+                    Stakeholder Management · Business Strategy</p> -->
+                <p id="skillsT" class="text-start"><strong>Technology:</strong> Excel · VBA · SQL · QuickBooks · Power BI · Tableau ·
+                    Python</p>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <!-- Experience -->
+        <div class="row text-center">
+            <div class="col-12">
+                <h2>Experience</h2>
+                <hr>
+                <div class="mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h5 id="compnayNameT" class="card-title mb-0 text-start">Network Solutions LLC</h5>
+                                <h6 id="companyJobRoleT" class="card-subtitle mb-2 text-muted text-start">Lead Business Analyst & Project
+                                    Manager</h6>
+                            </div>
+                            <p id="jobLocT" class="card-text mb-0 text-end">Dallas, TX</p>
+                            <br>
+                            <p id="workDatesT">2019 - Ongoing</p>
+                        </div>
+                        <ul id="workExpT" class="text-start">
+                            <li>Created new strategies to manage $2 million of accounts at risk, resulting in an
+                                increase of 4% in revenue in 6 months.</li>
+                            <li>Led the effort to deploy an automated time & expense reporting system for more than 90
+                                onsite and offsite personnel across 3 locations.</li>
+                            <li>Oversaw the budget and schedule of a project to recruit, hire, and train 150 new
+                                employees at five new locations.</li>
+                        </ul>
+                    </div>
+                    <br>
+                </div>
+                <!-- <div class="mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h5 class="card-title mb-0 text-start">Network Solutions LLC</h5>
+                                <h6 class="card-subtitle mb-2 text-muted text-start">Senior Business Analyst</h6>
+                            </div>
+                            <p class="card-text mb-0 text-end">2017 - 2019</p>
+                        </div>
+                        <ul class="text-start">
+                            <li>Through an improved pricing model, increased gross revenue of 15% in 2018 compared to
+                                2017 with no change to fixed costs.</li>
+                            <li>Reduced warehouse processing time by 30% in just 3 months, while industry norm is 10
+                                months.</li>
+                            <li>Achieved project milestones and deliverables with an internal and external team of 10+
+                                analysts.</li>
+                        </ul>
+                    </div>
+                    <br>
+                </div>
+                <div class="mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h5 class="card-title mb-0 text-start">Lauzon</h5>
+                                <h6 class="card-subtitle mb-2 text-muted text-start">Business Analyst</h6>
+                            </div>
+                            <p class="card-text mb-0 text-end">Dallas, TX<br>2013 - 2016</p>
+                        </div>
+                        <ul class="text-start">
+                            <li>Lauzon is a 30-year-old limited company in the printing and packaging field with over
+                                150 employees.</li>
+                            <li>Prepared 2016 Budget with Variance analysis to prior years.</li>
+                            <li>Assisted merger in advanced electronics space, identifying synergy opportunities of $ 60
+                                M.</li>
+                            <li>Reduced IPS (Customer Issues) by 7.2% while impacting merely 3% of GMV.</li>
+                            <li>Designed and maintained 10+ data integration jobs.</li>
+                        </ul>
+                    </div>
+                </div> -->
+            </div>  
+        </div>
+        <br>
+        <br>
+
+        <!-- Education Template-->
+        <div class="row text-center">
+            <div class="col-12">
+                <h2>Education</h2>
+                <hr>
+                <div class=" mb-3">
+                    <div class="card-body d-flex align-items-center">
+                        <h5 id="clgTitle" class="card-title text-start flex-grow-1">University of Wisconsin</h5>
+                        <div class="eduInfo card-text mb-0 text-end">
+                            <p id="degreeName" class="card-text mb-0 text-end">
+                                M.Sc. in Finance
+                            </p>
+                            <p id="uniName" class="mb-0">Wisconsin</p>
+                            <p id="collegeDuration">2012 - 2013</p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <!-- <div class=" mb-3">
+                    <div class="card-body d-flex align-items-center">
+                        <h5 class="card-title text-start flex-grow-1">University of Wisconsin</h5>
+                        <p class="card-text mb-0 text-end">BBA: Business, Supply Chain Management<br>Wisconsin<br>2008 -
+                            2012</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <!-- Courses & Certificates -->
+        <div class="row text-center">
+            <div class="col-12">
+                <h2>Courses & Certificates</h2>
+                <hr>
+                <ul id="coursesList" class="text-start">
+                    <!-- Courses will be dynamically added here -->
+                    <!-- <li>PMI Professional in Business Analysis (PBA) — PMI, 2019</li> -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- <ul id="coursesList" class="text-start">
+            <li>PMI Professional in Business Analysis (PBA) — PMI, 2019</li>
+        </ul> -->
+        <br>
+        <br>
+
+        <!-- Interests & Hobbies -->
+        <!-- <div class="row text-center">
+            <div class="col-12">
+                <h2>Interests & Hobbies</h2>
+                <hr>
+                <div class="row">
+                    <div class="col-4 text-start">
+                        <h5>Giving back to my community</h5>
+                        <p>With my two kids, I spend at least one day each month volunteering.</p>
+                    </div>
+                    <div class="col-4 text-start">
+                        <h5>Horse-riding & spending time in nature</h5>
+                        <p>Recharging during the weekend is vital for leading a high-performing team.</p>
+                    </div>
+                    <div class="col-4 text-start">
+                        <h5>Developing my team into star analysts</h5>
+                        <p>Not only is it very satisfying, but it is also the highest value-add of any leader.</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="container mt-4 text-center">
+            <button onclick="printCV()" class="btn btn-dark btn-lg" id="printT">Print CV</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 bg-dark border-bottom border-bottom-dark" data-bs-theme="dark" id="footer">
+        <div class="row pt-4 d-flex justify-content-around">
+            <div class="col-md-3 text-center Right">
+                <!-- Right footer  -->
+                <h3 class="text">Resume Builder</h3>
+                <!-- <h3 class="text">by</h3> -->
+                <!-- <h4 class="text">Student Success Toolkit</h4> -->
+            </div>
+        </div>
+        <div class="text mt-3 mb-3 bottom text-center">
+            <p>Developed w/ &#10084; by Group 6 || All rights reserved - 2024</p>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+/* * {} */
+a:link {
+    text-decoration: none;
+    color: black;
+}
+.header, .footer {
+    color: white;
+}
+
+.template {
+    /* display: none; */
+}
+
+.experience-entry {
+    display: flex; 
+    /* Make the container a flexbox */
+    justify-content: space-between; 
+    /* Align items horizontally with space between */
+}
+#add-exp {
+    background: #a855f7;
+    color: white;
+}
+
+/* education-form section btn */
+#add-education {
+    background: #a855f7;
+    color: white;
+}
+/* courses & certification-form section btn */
+#add-course {
+    background: #a855f7;
+    color: white;
+}
+/* Generate resume btn */
+#Generate {
+    background: #a855f7;
+    color: white;
+}
+#Generate:hover, #add-education:hover, #add-course:hover, #add-exp:hover {
+    background: #8405fa;
+    transition: ease-in-out 0.3s;
+}
+
+.inputboxCourse {
+    margin-left: 6rem;
+}
