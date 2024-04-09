@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="/img/logo.jpeg">
-    <title>Resume Builder Neo</title>
+    <link rel="icon" href="./icons/logo.jpeg">
+    <title>Resume Builder</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
     <!-- Stylesheet -->
@@ -105,8 +105,8 @@
                             </div>
                         </div>
                         <!-- col 2 -->
-                        <!-- <div class="col d-flex flex-row-reverse"> -->
-                        <div class="col d-flex flex-column mb-3">
+                        <!-- d-flex flex-column mb-3 -->
+                        <div class="col">
                             <div class="col-6 ">
                                 <label for="location">Job Location:</label>
                                 <input type="text" class="form-control" id="jobLocation" placeholder="Enter job location">
@@ -118,12 +118,13 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- work exp  -->
-                    <label for="work_experience">Work Experience:</label>
-                    <textarea class="form-control" id="work_experienceTextarea" rows="5"
-                        placeholder="Enter your work experience using bullet points">
-                    </textarea>
+                    <div class="mb-4">
+                        <label for="work_experience">Work Experience:</label>
+                        <textarea class="form-control" id="work_experienceTextarea" rows="5"
+                            placeholder="Enter your work experience using bullet points">
+                        </textarea>
+                    </div>
                 </div>
                 <!-- add-btn -->
                 <button class="btn mt-3" id="add-exp">Add+</button>
@@ -142,10 +143,12 @@
                         <div class="card-body d-flex align-items-center">
                             <div class="flex-grow-1">
                                 <input id="eduClgField" type="text" class="form-control mb-2" placeholder="College Name">
+
                                 <input id="eduDegreeField" type="text" class="form-control" placeholder="Degree">
                             </div>
                             <div class="text-end">
                                 <input id="eduUniField" type="text" class="form-control mb-2" placeholder="University Name">
+
                                 <input id="eduDurationField" type="text" class="form-control" placeholder="Duration (Years)">
                             </div>
                         </div>
@@ -175,22 +178,13 @@
                             <input type="text" class="form-control inputboxCourse" id="provider" placeholder="e.g., Harvard, 2017">
                         </div>
                     </div>
-                    <p>🙏 Please click on the 'Add+' button below to save you values. 🙏</p>
-                    <button class="btn mt-3" id="add-course">Add+</button>
+                    <p style="color: blueviolet; font-style: italic;" >✨ Kindly select the 'Add+' button below to preserve your entered values.✨</p>
+                    <button class="btn mt-2" id="add-course">Add+</button>
                 </div>
             </div>
         </div>
         <br>
         <br>
-
-
-        <!-- Interests & Hobbies Form -->
-        <!-- <div class="row text-center">
-            <div class="col-12">
-                <h2>Interests & Hobbies</h2>
-                <hr>
-            </div>
-        </div> -->
 
         <!-- Generate Btn -->
         <div class="contaner text-center mt-3">
@@ -201,7 +195,6 @@
     <!--! ========= * ========= * ========= * ========= * ========= * ========= * ========= * ========= -->
 
     <!--* RESUME TEMPLATE -->
-    <!-- Bootstrap Container -->
     <div class="container mt-5 template">
         <!-- Resume Header -->
         <div class="row text-center">
@@ -280,16 +273,19 @@
                     </div>
                     <br>
                 </div>
-                <!-- <div class="mb-3">
+                <!-- job exp 2 -->
+                <div class="mb-3">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-start">
                             <div>
-                                <h5 class="card-title mb-0 text-start">Network Solutions LLC</h5>
-                                <h6 class="card-subtitle mb-2 text-muted text-start">Senior Business Analyst</h6>
+                                <h5 id="compnayNameT2" class="card-title mb-0 text-start">Network Solutions LLC</h5>
+                                <h6 id="companyJobRoleT2" class="card-subtitle mb-2 text-muted text-start">Senior Business Analyst</h6>
                             </div>
-                            <p class="card-text mb-0 text-end">2017 - 2019</p>
+                            <p id="jobLocT2" class="card-text mb-0 text-end">Dallas, TX</p>
+                            <br>
+                            <p id="workDatesT2" class="card-text mb-0 text-end">2017 - 2019</p>
                         </div>
-                        <ul class="text-start">
+                        <ul id="workExpT2" class="text-start">
                             <li>Through an improved pricing model, increased gross revenue of 15% in 2018 compared to
                                 2017 with no change to fixed costs.</li>
                             <li>Reduced warehouse processing time by 30% in just 3 months, while industry norm is 10
@@ -300,7 +296,7 @@
                     </div>
                     <br>
                 </div>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-start">
                             <div>
@@ -330,9 +326,11 @@
             <div class="col-12">
                 <h2>Education</h2>
                 <hr>
+                <!-- edu info 1 -->
                 <div class=" mb-3">
                     <div class="card-body d-flex align-items-center">
                         <h5 id="clgTitle" class="card-title text-start flex-grow-1">University of Wisconsin</h5>
+                        
                         <div class="eduInfo card-text mb-0 text-end">
                             <p id="degreeName" class="card-text mb-0 text-end">
                                 M.Sc. in Finance
@@ -343,13 +341,20 @@
                     </div>
                 </div>
                 <br>
-                <!-- <div class=" mb-3">
-                    <div class="card-body d-flex align-items-center">
+                <!-- edu info 2 -->
+                <div class=" mb-3">
+                    <div id="clgTitle2" class="card-body d-flex align-items-center">
                         <h5 class="card-title text-start flex-grow-1">University of Wisconsin</h5>
-                        <p class="card-text mb-0 text-end">BBA: Business, Supply Chain Management<br>Wisconsin<br>2008 -
-                            2012</p>
+
+                        <div class="eduInfo card-text mb-0 text-end">
+                            <p id="degreeName2" class="card-text mb-0 text-end">
+                                BBA: Business, Supply Chain
+                            </p>
+                            <p id="uniName2" class="mb-0">Wisconsin</p>
+                            <p id="collegeDuration2">2008 - 2012</p>
+                        </div>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
         <br>
@@ -366,37 +371,11 @@
                 </ul>
             </div>
         </div>
-
-        <!-- <ul id="coursesList" class="text-start">
-            <li>PMI Professional in Business Analysis (PBA) — PMI, 2019</li>
-        </ul> -->
         <br>
         <br>
-
-        <!-- Interests & Hobbies -->
-        <!-- <div class="row text-center">
-            <div class="col-12">
-                <h2>Interests & Hobbies</h2>
-                <hr>
-                <div class="row">
-                    <div class="col-4 text-start">
-                        <h5>Giving back to my community</h5>
-                        <p>With my two kids, I spend at least one day each month volunteering.</p>
-                    </div>
-                    <div class="col-4 text-start">
-                        <h5>Horse-riding & spending time in nature</h5>
-                        <p>Recharging during the weekend is vital for leading a high-performing team.</p>
-                    </div>
-                    <div class="col-4 text-start">
-                        <h5>Developing my team into star analysts</h5>
-                        <p>Not only is it very satisfying, but it is also the highest value-add of any leader.</p>
-                    </div>
-                </div>
-            </div>
-        </div> -->
 
         <div class="container mt-4 text-center">
-            <button onclick="printCV()" class="btn btn-dark btn-lg" id="printT">Print CV</button>
+            <button onclick="printResume()" class="btn btn-dark btn-lg" id="printT">Print CV</button>
         </div>
     </div>
 
@@ -407,7 +386,7 @@
                 <!-- Right footer  -->
                 <h3 class="text">Resume Builder</h3>
                 <!-- <h3 class="text">by</h3> -->
-                <!-- <h4 class="text">Student Success Toolkit</h4> -->
+                <!-- <h5 class="text">Student Success Toolkit</h5> -->
             </div>
         </div>
         <div class="text mt-3 mb-3 bottom text-center">
